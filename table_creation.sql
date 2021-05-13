@@ -75,8 +75,56 @@ INNER JOIN salaries AS sal ON
 emp.emp_no=sal.emp_no
 ORDER BY emp.emp_no ASC;
 
---Data Analysis #2
+--Data Analysis #2 - NOT COMPLETE
 SELECT first_name, last_name, hire_date
-FROM employees 
+FROM employees
 WHERE CONVERT(VARCHAR, hire_date, 111) LIKE '1986%'
 ORDER BY last_name ASC;
+
+--Data Analysis #3
+SELECT dm.dept_no, d.dept_name, dm.emp_no, e.last_name, e.first_name
+FROM dept_manager AS dm
+INNER JOIN departments AS d ON 
+dm.dept_no=d.dept_no
+INNER JOIN employees AS e ON
+dm.emp_no=e.emp_no
+ORDER BY dm.dept_no, dm.emp_no ASC;
+
+--Data Analysis #4
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
+from employees AS e
+INNER JOIN dept_emp AS de ON
+de.emp_no=e.emp_no
+INNER JOIN departments AS d ON
+d.dept_no=de.dept_no
+ORDER BY e.emp_no ASC;
+
+--Data Analysis #5
+SELECT first_name, last_name, sex
+FROM employees
+WHERE first_name = 'Hercules' AND last_name LIKE 'B%'
+ORDER BY last_name ASC;
+
+--Data Analysis #6
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
+from employees AS e
+INNER JOIN dept_emp AS de ON
+de.emp_no=e.emp_no
+INNER JOIN departments AS d ON
+d.dept_no=de.dept_no
+WHERE d.dept_name = 'Sales'
+ORDER BY e.emp_no ASC;
+
+--Data Analysis #7
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
+from employees AS e
+INNER JOIN dept_emp AS de ON
+de.emp_no=e.emp_no
+INNER JOIN departments AS d ON
+d.dept_no=de.dept_no
+WHERE d.dept_name = 'Sales' OR d.dept_name = 'Development'
+ORDER BY e.emp_no ASC;
+
+--Data Analysis #8
+
+
