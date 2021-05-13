@@ -69,8 +69,8 @@ select * from dept_manager;
 select * from salaries;
 
 --Data Analysis #1
-select emp.emp_no, emp.last_name, emp.first_name, emp.sex, sal.salary
-from employees AS emp 
+SELECT emp.emp_no, emp.last_name, emp.first_name, emp.sex, sal.salary
+FROM employees AS emp 
 INNER JOIN salaries AS sal ON
 emp.emp_no=sal.emp_no
 ORDER BY emp.emp_no ASC;
@@ -107,7 +107,7 @@ ORDER BY last_name ASC;
 
 --Data Analysis #6
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
-from employees AS e
+FROM employees AS e
 INNER JOIN dept_emp AS de ON
 de.emp_no=e.emp_no
 INNER JOIN departments AS d ON
@@ -117,7 +117,7 @@ ORDER BY e.emp_no ASC;
 
 --Data Analysis #7
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
-from employees AS e
+FROM employees AS e
 INNER JOIN dept_emp AS de ON
 de.emp_no=e.emp_no
 INNER JOIN departments AS d ON
@@ -126,5 +126,8 @@ WHERE d.dept_name = 'Sales' OR d.dept_name = 'Development'
 ORDER BY e.emp_no ASC;
 
 --Data Analysis #8
-
+SELECT last_name, COUNT(last_name) AS last_name_count
+FROM employees
+GROUP BY last_name
+ORDER BY COUNT(last_name) DESC;
 
