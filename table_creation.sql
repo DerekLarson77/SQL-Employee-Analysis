@@ -75,10 +75,11 @@ INNER JOIN salaries AS sal ON
 emp.emp_no=sal.emp_no
 ORDER BY emp.emp_no ASC;
 
---Data Analysis #2 - NOT COMPLETE
+--Data Analysis #2
 SELECT first_name, last_name, hire_date
 FROM employees
-WHERE CONVERT(VARCHAR, hire_date, 111) LIKE '1986%'
+--Need to do the 'to_char' in the where clause because WHERE is before SELECT in order of execution.
+WHERE to_char(hire_date, 'YYYY-MM-DD') LIKE '1986%'
 ORDER BY last_name ASC;
 
 --Data Analysis #3
