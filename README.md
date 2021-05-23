@@ -1,6 +1,8 @@
 # sql-challenge
 
-Taking data sets from 6 different CSV files to join together to answer eight questions.
+Taking data sets from 6 different CSV files (located in the EmployeeSQL folder) to join together to answer eight questions.
+
+The tables_ERD image displays all 6 tables to organize what columns can link between tables.
 
 The table_creation.sql file has all the create tables with primary and foreign keys.
 
