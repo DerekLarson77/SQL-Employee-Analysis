@@ -1,4 +1,4 @@
-# sql-challenge
+# SQL-Employee-Analysis
 
 Taking data sets from 6 different CSV files (located in the EmployeeSQL folder) to join together to answer eight questions.
 
